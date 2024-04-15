@@ -16,6 +16,9 @@ public record DipendenteDTO(
         @Email(message = "l'email non è valida")
         String email,
 
+        @NotEmpty(message = "la password è obbligatoria")
+        String password,
+
         String profileImg
 
 ) {

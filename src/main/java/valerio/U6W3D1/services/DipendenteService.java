@@ -30,6 +30,7 @@ public class DipendenteService {
                 newDipendenteDTO.surname(),
                 newDipendenteDTO.username(),
                 newDipendenteDTO.email(),
+                newDipendenteDTO.password(),
                 newDipendenteDTO.profileImg());
         dipendenteDAO.save(newDipendente);
         return newDipendenteDTO;
@@ -72,5 +73,8 @@ public class DipendenteService {
         return found;
     }
 
+    public Dipendente findByEmail(String email) {
+        return dipendenteDAO.findByEmail(email).orElseThrow(()-> new NotFoundException("non è stato possibile trovare l'utente con al seguente email: " + email));
+    }
 
 }
