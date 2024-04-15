@@ -1,11 +1,13 @@
 package valerio.U6W3D1.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import valerio.U6W3D1.entity.Dipendente;
 import valerio.U6W3D1.exceptions.UnauthorizedEx;
 import valerio.U6W3D1.payloads.UserLoginDTO;
 import valerio.U6W3D1.security.JWTTools;
 
+@Service
 public class AuthService {
     @Autowired
     private DipendenteService dipendenteService;
