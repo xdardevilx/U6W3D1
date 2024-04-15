@@ -23,9 +23,9 @@ public class JWTTools {
 
     public void validateToken(String token) {
         try{
-            Jwts.parser().verifyWith(Keys.hmacShaKeyFor(secret.getBytes())).build().parse(token)
+            Jwts.parser().verifyWith(Keys.hmacShaKeyFor(secret.getBytes())).build().parse(token);
         }catch (Exception e){
-            throw new UnauthorizedEx("problemi con l'accesso perfavore ritenta di nuovo il login");
+            throw new UnauthorizedEx("problemi con l'accesso per favore ritenta di nuovo il login");
         }
     }
 }

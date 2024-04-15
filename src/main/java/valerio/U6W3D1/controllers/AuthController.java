@@ -35,6 +35,6 @@ public class AuthController {
         if(validation.hasErrors()){
             throw new BadRequestException(validation.getAllErrors());
         }
-        return new NewUserRespDTO(this.dipendenteService.save(body))
+        return new NewUserRespDTO(this.dipendenteService.save(body).username());
     }
 }
